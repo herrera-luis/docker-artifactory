@@ -6,6 +6,7 @@ then
 else
     echo "Creating the directory artifactory."
     mkdir $(pwd)/artifactory
+    chmod 777 -R $(pwd)/artifactory
 fi
 
 if [ -d $(pwd)/artifactory/data ]
@@ -14,6 +15,7 @@ then
 else
     echo "Creating the directory artifactory/data."
     mkdir $(pwd)/artifactory/data
+    chmod 777 -R $(pwd)/artifactory/data
 fi
 
 if [ -d $(pwd)/artifactory/backup ]
@@ -22,6 +24,7 @@ then
 else
     echo "Creating the directory artifactory/backup."
     mkdir $(pwd)/artifactory/backup
+    chmod 777 -R $(pwd)/artifactory/backup
 fi
 
 if [ -d $(pwd)/artifactory/etc ]
@@ -30,6 +33,7 @@ then
 else
     echo "Creating the directory artifactory/etc."
     mkdir $(pwd)/artifactory/etc
+    chmod 777 -R $(pwd)/artifactory/etc
 fi
 
 
