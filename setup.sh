@@ -6,7 +6,7 @@ then
 else
     echo "Creating the directory artifactory."
     mkdir $(pwd)/artifactory
-    chmod 777 -R $(pwd)/artifactory
+    chmod -R 777 $(pwd)/artifactory
 fi
 
 if [ -d $(pwd)/artifactory/data ]
@@ -15,7 +15,7 @@ then
 else
     echo "Creating the directory artifactory/data."
     mkdir $(pwd)/artifactory/data
-    chmod 777 -R $(pwd)/artifactory/data
+    chmod -R 777 $(pwd)/artifactory/data
 fi
 
 if [ -d $(pwd)/artifactory/backup ]
@@ -24,7 +24,7 @@ then
 else
     echo "Creating the directory artifactory/backup."
     mkdir $(pwd)/artifactory/backup
-    chmod 777 -R $(pwd)/artifactory/backup
+    chmod -R 777 $(pwd)/artifactory/backup
 fi
 
 if [ -d $(pwd)/artifactory/etc ]
@@ -33,7 +33,7 @@ then
 else
     echo "Creating the directory artifactory/etc."
     mkdir $(pwd)/artifactory/etc
-    chmod 777 -R $(pwd)/artifactory/etc
+    chmod -R 777 $(pwd)/artifactory/etc
 fi
 
 if [ -d $(pwd)/artifactory/etc/plugins ]
@@ -42,7 +42,7 @@ then
 else
     echo "Creating the directory artifactory/etc/plugins."
     mkdir $(pwd)/artifactory/etc/plugins
-    chmod 777 -R $(pwd)/artifactory/etc/plugins
+    chmod -R 777 $(pwd)/artifactory/etc/plugins
 fi
 
 docker build -t machine/artifactory .

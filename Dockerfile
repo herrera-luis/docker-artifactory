@@ -12,6 +12,7 @@ RUN cd "/tmp" \
  && unzip $ARTIFACTORY_FILE \
  && mv $ARTIFACTORY_NAME $ARTIFACTORY_HOME
 
+COPY master.key $ARTIFACTORY_HOME/etc/security/master.key
 WORKDIR $ARTIFACTORY_HOME
 CMD bin/artifactory.sh
 
