@@ -36,11 +36,19 @@ else
     chmod 777 -R $(pwd)/artifactory/etc
 fi
 
+if [ -d $(pwd)/artifactory/etc/plugins ]
+then
+    echo "Directory artifactory/etc/plugins exists."
+else
+    echo "Creating the directory artifactory/etc/plugins."
+    mkdir $(pwd)/artifactory/etc/plugins
+    chmod 777 -R $(pwd)/artifactory/etc/plugins
+fi
 
 docker build -t machine/artifactory .
 
 docker run -d -p 8081:8081 --name server-artifactory -v $(pwd)/artifactory/data:/usr/local/artifactory/data \
 -v $(pwd)/artifactory/backup:/usr/local/artifactory/backup \
--v $(pwd)/artifactory/etc:/usr/local/artifactory/etc \
+-v $(pwd)/artifactory/etc/plugins:/usr/local/artifactory/etc/plugins \
 -v $(pwd):/home/DevOps \
 --restart always machine/artifactory
